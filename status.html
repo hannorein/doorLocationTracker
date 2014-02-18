@@ -14,12 +14,13 @@
 		margin: 0px;
 		display: block;
 		background-color: rgba(215,215,215,0.7);
+		margin-top: 24px;
     	}
 	dd
 	{
 		padding-left: 84px;
 		padding-right: 44px;
-		padding-bottom: 24px;
+		margin 0;
 	}
 	h1
 	{
@@ -31,6 +32,15 @@
 	div, h1, dt{
 		padding-left: 95px;
 		padding-right: 50px;
+	}
+	.week {
+		position: relative;
+		inline: block;
+		float: left;
+		width: 7em;
+	}
+	.here {
+		background-color: rgba(0,255,0,0.5);
 	}
 </style>
 </head>
@@ -49,8 +59,12 @@ hanno.rein@utoronto.ca<br/>
 <dt>Office hours this week</dt>
 <dd>Wednesday 12:30pm until 2:30pm</dd>
 
-<dt>Location today</dt>
-<dd>UTSC - SW504C</dd>
+<dt>Schedule this week</dt>
+<dd><span class="week">Monday:</span> 		Bank Holiday</dd>
+<dd><span class="week">Tuesday:</span> 		<span class="here">Scarborough<span></dd>
+<dd><span class="week">Wednesday:</span> 	<span class="here">Scarborough<span></dd>
+<dd><span class="week">Thursday:</span> 	TBD</dd>
+<dd><span class="week">Friday:</span> 		TBD</dd>
 </dl>
 </body>
 </html>
