@@ -1,5 +1,6 @@
 <html>
 <head>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <style type="text/css">
 	body
 	{
@@ -29,9 +30,12 @@
 		margin: 0px;
 		
 	}
-	div, h1, dt{
+	.top, h1, dt{
 		padding-left: 95px;
 		padding-right: 50px;
+	}
+	div {
+		font-size: 0.8em;
 	}
 	.week {
 		position: relative;
@@ -45,15 +49,33 @@
 	.away {
 		background-color: rgba(255,0,0,0.5);
 	}
+	.fadein {
+		position:relative; 
+		width:768px;  
+	}
+	.fadein img { 
+		position:absolute; 
+		left:0; 
+		top:0; 
+	}
 </style>
+<script>
+$(function(){
+    $('.fadein img:gt(0)').hide();
+    setInterval(function(){
+      $('.fadein :first-child').fadeOut()
+         .next('img').fadeIn()
+         .end().appendTo('.fadein');}, 
+      5000);
+});
+</script>
 </head>
 <body>
 <h1>Hanno Rein</h1>
-<div>
+<div class="top">
 hanno.rein@utoronto.ca<br/>
 416-287-7206 (Scarborough Campus)<br/>
 416-978-4582 (Downtown Campus)
-
 </div>
 <dl>
 <dt>Summer research projects</dt>
@@ -68,6 +90,15 @@ hanno.rein@utoronto.ca<br/>
 <dd><span class="week">Wednesday:</span> 	<span class="here">Scarborough</span></dd>
 <dd><span class="week">Thursday:</span> 	TBD</dd>
 <dd><span class="week">Friday:</span> 		TBD</dd>
+
+<dt>Current research</dt>
+<div class="fadein">
+<img border=0 src="slide0.png" />
+<img border=0 src="slide1.png" />
+<img border=0 src="slide2.png" />
+<img border=0 src="slide3.png" />
+<img border=0 src="slide4.png" />
+</div>
 </dl>
 </body>
 </html>
