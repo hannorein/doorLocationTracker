@@ -14,5 +14,5 @@ fi
 
 git add -A *.html
 git add -A dnd.tag
-#git commit -a -m "push"
-#git push
+git commit -a -m "push"
+git push
