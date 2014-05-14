@@ -5,9 +5,10 @@
 	body
 	{
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-		font-size: 3em;
-		margin: 80px;
-		background-color: rgba(255,0,0,0.5);
+		font-size: 2em;
+		margin: 0px;
+		background: url("header.png");
+		background-repeat: no-repeat;
 	}
     	dt
     	{
@@ -22,11 +23,16 @@
 		padding-right: 44px;
 		margin 0;
 	}
-	h2, h1
+	h1
 	{
-		font-weight: bold;
+		font-weight: normal;
+		padding-left: 10px;
 		margin: 0px;
 		
+	}
+	.top, h1, dt{
+		padding-left: 95px;
+		padding-right: 50px;
 	}
 	div {
 		font-size: 0.8em;
@@ -56,14 +62,46 @@
 		top:0; 
 	}
 </style>
+<script>
+$(function(){
+    $('.fadein img:gt(0)').hide();
+    setInterval(function(){
+      $('.fadein :first-child').fadeOut()
+         .next('img').fadeIn()
+         .end().appendTo('.fadein');}, 
+      5000);
+});
+</script>
 </head>
 <body>
-<center>
-Sorry, I'm currently
-<h1>BUSY.</h1>
-Please 
-<h2>DO NOT DISTURB</h2>
-and come back later. Thank you.
-</center>
+<h1>Hanno Rein</h1>
+<div class="top">
+hanno.rein@utoronto.ca<br/>
+416-287-7206 (Scarborough Campus)<br/>
+416-978-4582 (St George Campus)
+</div>
+<dl>
+<dt>Office hours this week</dt>
+<dd>Tuesday 2pm-3pm</dd>
+
+<dt>Schedule this week</dt>
+<dd><span class="week">Monday:</span> 		<span class="here">Scarborough</span></dd>
+<dd><span class="week">Tuesday:</span> 		<span class="here">Scarborough</span></dd>
+<dd><span class="week">Wednesday:</span> 	<span class="here">Scarborough</span></dd>
+<dd><span class="week">Thursday:</span> 	<span class="here">Scarborough</span></dd>
+<dd><span class="week">Friday:</span> 		<span class="away">St George</span></dd>
+
+
+
+<dt>Research snapshots</dt>
+<div class="fadein">
+<img border=0 src="slide0.png" />
+<img border=0 src="slide1.png" />
+<img border=0 src="slide2.png" />
+<img border=0 src="slide3.png" />
+<img border=0 src="slide4.png" />
+<img border=0 src="slide5.png" />
+</div>
+</dl>
 </body>
 </html>
