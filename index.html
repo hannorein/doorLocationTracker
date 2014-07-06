@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
 <style type="text/css">
@@ -14,12 +14,24 @@
 	position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
     }
 </style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
-window.setInterval("reloadIFrame();", 60000);
-document.getElementById('status').contentWindow.location.reload();
+window.setInterval("reloadIFrame();", 45000);
 function reloadIFrame() {
-	document.getElementById('status').contentWindow.location.reload();
+	//document.getElementById('status').contentWindow.location.reload();
+$.ajax({
+    type: 'GET',
+    url: document.getElementById('status').src,    
+    success: function(data){
+        document.getElementById('status').src += "";
+    },
+    error: function(data){
+    },
+});
 }
+
+
+
 </script>
 </head>
 <body>
