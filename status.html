@@ -5,9 +5,10 @@
 	body
 	{
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-		font-size: 3em;
-		margin: 100px;
-		background-color: rgba(255,0,0,0.5);
+		font-size: 2em;
+		margin: 0px;
+		background: url("header.png");
+		background-repeat: no-repeat;
 	}
     	dt
     	{
@@ -20,13 +21,18 @@
 	{
 		padding-left: 84px;
 		padding-right: 44px;
-		margin 0;
+		margin: 0;
 	}
-	h2, h1
+	h1
 	{
-		font-weight: bold;
+		font-weight: normal;
+		padding-left: 10px;
 		margin: 0px;
 		
+	}
+	.top, h1, dt{
+		padding-left: 95px;
+		padding-right: 50px;
 	}
 	div {
 		font-size: 0.8em;
@@ -37,14 +43,34 @@
 		float: left;
 		width: 7em;
 	}
-	.here {
+	.notice {
+		padding: 4.5em;
+		background-color: rgba(255,0,0,0.5);
+		margin: 0px;
+	}
+	.utsc {
 		background-color: rgba(0,255,0,0.5);
+	}
+	.utsc:after {
+		content: 'Scarborough';
+	}
+	.utsg {
+		background-color: rgba(238,178,118,0.5);
+	}
+	.utsg:after {
+		content: 'St George';
 	}
 	.away {
 		background-color: rgba(255,0,0,0.5);
 	}
-	.gray {
+	.away:after {
+		content: 'away';
+	}
+	.tbd {
 		background-color: rgba(155,155,155,0.5);
+	}
+	.tbd:after {
+		content: 'TBD';
 	}
 	.fadein {
 		position:relative; 
@@ -56,14 +82,56 @@
 		top:0; 
 	}
 </style>
+<script>
+$(function(){
+    $('.fadein img:gt(0)').hide();
+    setInterval(function(){
+      $('.fadein :first-child').fadeOut()
+         .next('img').fadeIn()
+         .end().appendTo('.fadein');}, 
+      5000);
+});
+</script>
 </head>
 <body>
-<center>
-Sorry, I'm currently
-<h1>BUSY.</h1>
-Please 
-<h2>DO NOT DISTURB</h2>
-and come back later. Thank you.
-</center>
+<h1>Hanno Rein</h1>
+<div class="top">
+hanno.rein@utoronto.ca<br/>
+416-287-7206 (Scarborough Campus)<br/>
+416-978-4582 (St George Campus)
+</div>
+<dl>
+<!--
+<dt>Office hours this week</dt>
+<dd>Tuesday 2pm-3pm</dd>
+-->
+
+<dt>Schedule this week</dt>
+<dd><span class="week">Monday:</span> 		<span class="utsg"></span></dd>
+<dd><span class="week">Tuesday:</span> 		<span class="utsc"></span></dd>
+<dd><span class="week">Wednesday:</span> 	<span class="utsc"></span></dd>
+<dd><span class="week">Thursday:</span> 	<span class="utsg"></span></dd>
+<dd><span class="week">Friday:</span> 		<span class="utsc"></span></dd>
+
+<!--
+<dt>Travel notice</dt>
+<dd class="notice">
+I am currently travelling. 
+I will be checking my e-mails, but expect a response time that is longer than usual.
+I will be back on Monday, June 9th.
+</dd>
+-->
+
+
+<dt>Research snapshots</dt>
+<div class="fadein">
+<img border=0 src="slide0.png" />
+<img border=0 src="slide1.png" />
+<img border=0 src="slide2.png" />
+<img border=0 src="slide3.png" />
+<img border=0 src="slide4.png" />
+<img border=0 src="slide5.png" />
+</div>
+</dl>
 </body>
 </html>
