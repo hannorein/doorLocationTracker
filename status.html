@@ -137,6 +137,23 @@ I will be back on Monday, June 9th.
 <dt>Snapshots</dt>
 <iframe class="youtube-player" type="text/html" width="768" height="432" src="http://www.youtube.com/embed/pu-g_ru_1Ek?autoplay=1&noflv=1&loop=1&playlist=pu-g_ru_1Ek" allowfullscreen frameborder="0">
 </iframe>
+    <div id="player"></div>
+      <script> 
+      var tag = document.createElement('script'); 
+      tag.src = "http://www.youtube.com/player_api"; 
+      var firstScriptTag = document.getElementsByTagName('script')[0]; 
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); 
+      var player; 
+      
+      function onYouTubePlayerAPIReady() { 
+        player = new YT.Player('player', { width:640, height:480, videoId:'pu-g_ru_1Ek', events: { 'onReady': onPlayerReady, } }); 
+      }
+      
+      function onPlayerReady(event) { 
+        event.target.playVideo(); 
+      } 
+        
+      </script> 
 <!--
 <div class="fadein">
 <img border=0 src="slide0.png" />
