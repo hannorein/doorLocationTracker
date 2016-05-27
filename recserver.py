@@ -70,7 +70,7 @@ def hello():
                         r = "<dd><span class=\"week\">"+day+":</span> 		<span class=\""+request.form[day]+"\"></span></dd>\n"
                 f.write(r)
 
-        
+        os.system("git commit -a -m 'webform' && git push")
 	return "Saved. Message is now: <br/><br/>"
 
 
