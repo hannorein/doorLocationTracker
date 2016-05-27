@@ -40,7 +40,7 @@ def page_planet_redirect():
             cur += """
             <label style="display: inline-block; width: 70px" for='"""+day+"""'>"""+day+""": </label>
             """
-            for s in ["away","utsc","utsg","tbd"]:
+            for s in ["utsc","utsg","tbd","away"]:
                 if status == s:
                     cur += """<input type="radio" name='"""+day+"""'  value='"""+s+"""' checked="checked">"""+s
                 else:
@@ -70,8 +70,7 @@ def hello():
                         r = "<dd><span class=\"week\">"+day+":</span> 		<span class=\""+request.form[day]+"\"></span></dd>\n"
                 f.write(r)
 
-        os.system("GIT_SSH_COMMAND='ssh -i push.key' git commit -a -m 'webform' && git push")
-	return "Saved. Message is now: <br/><br/>"
+	return "Saved. <br/><br/>"
 
 
 if __name__ == '__main__':
