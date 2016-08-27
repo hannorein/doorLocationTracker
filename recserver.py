@@ -13,10 +13,10 @@ app = FlaskApp(__name__)
 @app.route('/')
 @app.route('/index.html')
 def page_planet_redirect():
-	cur = """
-	<html>
-	<body>
-	<form method="post" action="/recv/">
+        cur = """
+        <html>
+        <body>
+        <form method="post" action="/recv/">
         """
         sfilen = "/home/rein/git/doorLocationTracker/status.html"
         sstr0 = "<dd><span class=\"week\">"
@@ -47,12 +47,12 @@ def page_planet_redirect():
                     cur += """<input type="radio" name='"""+day+"""'  value='"""+s+"""' >"""+s
 
             cur += """ <br />"""
-	cur += """<input type="submit" />
-	</form>
-	</body>
-	</html>
-	"""
-	return cur
+        cur += """<input type="submit" />
+        </form>
+        </body>
+        </html>
+        """
+        return cur
 
 
 @app.route('/recv/', methods=['POST'])
@@ -67,10 +67,10 @@ def hello():
                 for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]:
                     sstr = sstr0 + day
                     if sstr in r:
-                        r = "<dd><span class=\"week\">"+day+":</span> 		<span class=\""+request.form[day]+"\"></span></dd>\n"
+                        r = "<dd><span class=\"week\">"+day+":</span>               <span class=\""+request.form[day]+"\"></span></dd>\n"
                 f.write(r)
 
-	return "Saved. <br/><br/>"
+        return "Saved. <br/><br/>"
 
 
 if __name__ == '__main__':
