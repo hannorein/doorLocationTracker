@@ -37,6 +37,14 @@ def page_planet_redirect():
                         status = "utsc"
                     if "utsg" in r:
                         status = "utsg"
+        sfilen = "/home/rein/git/doorLocationTracker/status.html"
+        with open(sfilen) as f:
+            sf = f.readlines()
+
+        text = ""
+        for r in sf:
+            if "<h1>" in r:
+                text = (r[4:])[:-4]
 
             cur += """
             <label style="display: inline-block; width: 70px" for='"""+day+"""'>"""+day+""": </label>
@@ -49,7 +57,7 @@ def page_planet_redirect():
 
             cur += """ <br />"""
         cur += """ <br />"""
-        cur += """Manual text: <input type="text" name="text"><br>"""
+        cur += "Manual text: <input type=\"text\" name=\"text\" value=\""+text+"\"><br>"
         cur += """ <br />"""
         cur += """<input type="submit" />
         </form>
