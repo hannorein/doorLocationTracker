@@ -81,10 +81,8 @@ def hello():
 
             with open(sfilen2,"w") as f:
                 for r in sf:
-                    for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]:
-                        sstr = sstr0 + day
-                        if sstr in r:
-                            r = "<dd><span class=\"week\">"+day+":</span>               <span class=\""+request.form[day]+"\"></span></dd>\n"
+                    if "<h1>" in r:
+                        r = "<h1>"+request.form["text"]+"</h1>\n"
                     f.write(r)
 
         return "Saved. <br/><br/>"
