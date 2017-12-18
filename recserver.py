@@ -55,6 +55,8 @@ def page_planet_redirect():
         for r in sf:
             if "<h1>" in r:
                 text = (r[4:])[:-6]
+        if text == "Hanno Rein":
+            text = ""
 
         cur += """ <br />"""
         cur += "Manual text: <input type=\"text\" name=\"text\" value=\""+text+"\"><br>"
