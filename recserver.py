@@ -62,6 +62,7 @@ def page_planet_redirect():
 def hello():
         sfilen = "/home/rein/git/doorLocationTracker/status_base.html"
         sfilen2 = "/home/rein/git/doorLocationTracker/status.html"
+        sfilen3 = "/home/rein/git/doorLocationTracker/dnd.html"
         sstr0 = "<dd><span class=\"week\">"
         with open(sfilen) as f:
             sf = f.readlines()
@@ -75,6 +76,16 @@ def hello():
                 f.write(r)
         if len(request.form["text"])>0:
             # Manual text 
+            with open(sfilen3) as f:
+                sf = f.readlines()
+
+            with open(sfilen2,"w") as f:
+                for r in sf:
+                    for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]:
+                        sstr = sstr0 + day
+                        if sstr in r:
+                            r = "<dd><span class=\"week\">"+day+":</span>               <span class=\""+request.form[day]+"\"></span></dd>\n"
+                    f.write(r)
 
         return "Saved. <br/><br/>"
 
