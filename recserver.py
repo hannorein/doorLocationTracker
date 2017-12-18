@@ -18,7 +18,7 @@ def page_planet_redirect():
         <body>
         <form method="post" action="/recv/">
         """
-        sfilen = "/home/rein/git/doorLocationTracker/status.html"
+        sfilen = "/home/rein/git/doorLocationTracker/status_base.html"
         sstr0 = "<dd><span class=\"week\">"
         with open(sfilen) as f:
             sf = f.readlines()
@@ -74,6 +74,7 @@ def hello():
                     if sstr in r:
                         r = "<dd><span class=\"week\">"+day+":</span>               <span class=\""+request.form[day]+"\"></span></dd>\n"
                 f.write(r)
+        copyfile(sfilen2, sfilen)
         if len(request.form["text"])>0:
             # Manual text 
             with open(sfilen3) as f:
