@@ -47,6 +47,9 @@ def page_planet_redirect():
                     cur += """<input type="radio" name='"""+day+"""'  value='"""+s+"""' >"""+s
 
             cur += """ <br />"""
+        cur += """ <br />"""
+        cur += """ <input type="text" name="text"><br>"""
+        cur += """ <br />"""
         cur += """<input type="submit" />
         </form>
         </body>
