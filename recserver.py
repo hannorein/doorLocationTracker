@@ -60,7 +60,8 @@ def page_planet_redirect():
 
 @app.route('/recv/', methods=['POST'])
 def hello():
-        sfilen = "/home/rein/git/doorLocationTracker/status.html"
+        sfilen = "/home/rein/git/doorLocationTracker/status_base.html"
+        sfilen2 = "/home/rein/git/doorLocationTracker/status.html"
         sstr0 = "<dd><span class=\"week\">"
         with open(sfilen) as f:
             sf = f.readlines()
