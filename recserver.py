@@ -66,13 +66,15 @@ def hello():
         with open(sfilen) as f:
             sf = f.readlines()
 
-        with open(sfilen,"w") as f:
+        with open(sfilen2,"w") as f:
             for r in sf:
                 for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]:
                     sstr = sstr0 + day
                     if sstr in r:
                         r = "<dd><span class=\"week\">"+day+":</span>               <span class=\""+request.form[day]+"\"></span></dd>\n"
                 f.write(r)
+        if len(request.form["text"])>0:
+            # Manual text 
 
         return "Saved. <br/><br/>"
 
