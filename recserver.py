@@ -61,6 +61,16 @@ def page_planet_redirect():
         cur += """ <br />"""
         cur += "Manual text: <input type=\"text\" name=\"text\" value=\""+text+"\"><br>"
         cur += """ <br />"""
+        cur += """ <br />"""
+        cur += """ Check e-mails: """
+        if os.path.isfile("checkmail.txt"):
+            cur += """<input type="radio" name="email"  value="on" checked="checked">"""
+            cur += """<input type="radio" name="email"  value="off">"""
+        else:
+            cur += """<input type="radio" name="email"  value="on">"""
+            cur += """<input type="radio" name="email"  value="off" checked="checked">"""
+        cur += """ <br />"""
+        cur += """ <br />"""
         cur += """<input type="submit" />
         </form>
         </body>
