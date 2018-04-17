@@ -63,7 +63,7 @@ def page_planet_redirect():
         cur += """ <br />"""
         cur += """ <br />"""
         cur += """ Check e-mails: """
-        if os.path.isfile("./checkmail.txt"):
+        if os.path.isfile("/home/rein/git/doorLocationTracker/checkmail.txt"):
             cur += """<input type="radio" name="email"  value="on" checked="checked"> on"""
             cur += """<input type="radio" name="email"  value="off"> off"""
         else:
