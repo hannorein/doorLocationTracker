@@ -81,7 +81,7 @@ def page_checkmail():
         cef = "/home/rein/git/doorLocationTracker/mailtags/checkmail.tag"
         with open(cef,"w") as f:
             f.write("now")
-        os.chmod(cef, 0777)
+        os.chmod(cef, 0o777)
 
         return cur
 
