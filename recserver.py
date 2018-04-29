@@ -78,7 +78,7 @@ def page_checkmail():
         </body>
         </html>
         """
-        cef = "/home/rein/git/doorLocationTracker/checkmail.tag"
+        cef = "/home/rein/git/doorLocationTracker/mailtags/checkmail.tag"
         with open(cef,"w") as f:
             f.write("now")
         return cur
