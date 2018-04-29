@@ -69,6 +69,13 @@ def page_planet_redirect():
         """
         return cur
 
+@app.route('/fetchmail.out')
+def page_mailout():
+    cef = "/home/rein/git/doorLocationTracker/mailtags/fetchmail.out"
+    with open(cef) as f:
+        sf = f.read()
+    return sf
+
 @app.route('/checkmail.html')
 def page_checkmail():
         cur = """
