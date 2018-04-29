@@ -62,21 +62,27 @@ def page_planet_redirect():
         cur += "Manual text: <input type=\"text\" name=\"text\" value=\""+text+"\"><br>"
         cur += """ <br />"""
         cur += """ <br />"""
-        cur += """ Check e-mails: """
-        if os.path.isfile("/home/rein/git/doorLocationTracker/checkmail.txt"):
-            cur += """<input type="radio" name="email"  value="on" checked="checked"> on"""
-            cur += """<input type="radio" name="email"  value="off"> off"""
-        else:
-            cur += """<input type="radio" name="email"  value="on"> on"""
-            cur += """<input type="radio" name="email"  value="off" checked="checked"> off"""
-        cur += """ <br />"""
-        cur += """ <br />"""
         cur += """<input type="submit" />
         </form>
         </body>
         </html>
         """
         return cur
+
+@app.route('/checkmail.html')
+def page_checkmail():
+        cur = """
+        <html>
+        <body>
+        Will check e-mails now.
+        </body>
+        </html>
+        """
+        cef = "/home/rein/git/doorLocationTracker/checkmail.tag"
+        with open(cef,"w") as f:
+            f.write("now")
+        return cur
+
 
 
 @app.route('/recv/', methods=['POST'])
